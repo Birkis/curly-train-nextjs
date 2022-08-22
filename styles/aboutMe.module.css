@@ -1,8 +1,7 @@
 .aboutMe {
-    margin: 150px 0px;
+    margin: 150px auto;
     display: flex;
     max-width: 1110px;
-    margin: auto;
     justify-content: space-between;
 }
 
