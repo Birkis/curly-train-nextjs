@@ -1,9 +1,9 @@
 import styles  from '../styles/topBanner.module.scss'
 import  Image from  'next/image'
-import { MiddlewareNotFoundError } from 'next/dist/shared/lib/utils';
 
+export function BannerSection({title,  buttonText}) {
 
-export default function BannerSection() {
+  console.log(title)
     return (
       <div className={styles.bannerContainer}>
 
@@ -15,9 +15,7 @@ export default function BannerSection() {
             />
 
         <div className={styles.textSection}>
-          <h1>Hey, I'm Max 
-              and I love building 
-              beautiful websites
+          <h1>{title}
           </h1>
           <button  className='button-primary'>
             About me

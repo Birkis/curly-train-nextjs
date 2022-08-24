@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from '../styles/navbar.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
-export default function Navbar() {
+export function Navbar() {
 
     return (
         <nav className={styles.navbar}>
@@ -11,9 +12,9 @@ export default function Navbar() {
         </div>
         <div>
           <ul className={`${styles.links} body-2`}>
-            <li>Home</li>
-            <li>Portfolio</li>
-            <li>Contact Me</li>
+            <Link href="/"><li><a>Home </a></li></Link>
+            <Link href="/portfolio"><li><a>Portfolio </a></li></Link>
+            <Link href="/contact"><li><a>Contact Me </a></li></Link>
           
           </ul>
         </div>

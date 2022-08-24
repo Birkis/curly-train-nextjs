@@ -1,7 +1,6 @@
 import styles from  '../styles/aboutMe.module.scss'
 
-
-export default function AboutMe() {
+export function AboutMe({title}) {
     return (
         <div className={styles.aboutMe}>
             <div className={styles.profileImage}>
@@ -11,7 +10,7 @@ export default function AboutMe() {
                 />
             </div>
         <div className={styles.aboutMeText}>
-            <h2 className="">About Me</h2>
+            <h2 className="">{title}</h2>
             <p  className="body-1">
             I’m a junior front-end developer looking for a new role in an exciting
             company. I focus on writing accessible HTML, using modern CSS
