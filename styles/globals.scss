@@ -30,6 +30,9 @@
   --fw-regular: 400;
   --fw-bold: 700;
 
+  --fs-small: 12px;
+  --fs-regular: 1rem;
+
 }
 
 /* RESET */
@@ -64,6 +67,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+}
+
+.wrapper {
   max-width: 1440px;
   margin: auto;
 }
@@ -92,6 +99,12 @@ button {
   border: 0px;
   border: none;
   transition: 0.5s;
+  width: 200px;
+  height: 48px;
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+
 }
 
 button:hover {
@@ -111,6 +124,30 @@ button:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+
+/* BUTTONS */
+
+.button-primary {
+  background-color: var(--clr-primary-dark-blue);
+  color: var(--clr-secondary-very-light-gray);
+  
+  &:hover {
+    background-color: var(--clr-primary-green);
+  }
+
+}
+
+.button-secondary {
+  background-color: var(--clr-secondary-very-light-gray);
+  color: var(--clr-primary-dark-blue);
+  border: 1px solid var(--clr-primary-grayish-blue);
+
+  &:hover {
+    background-color: var(--clr-primary-grayish-blue);
+    color: var(--clr-secondary-very-light-gray);
   }
 }
 
