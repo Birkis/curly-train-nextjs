@@ -9,11 +9,11 @@ import AboutMe from '../components/aboutMe'
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Navbar/>
-
-      <TopBanner />
-      <AboutMe  />
-
+      <div className="wrapper">
+        <Navbar/>
+        <TopBanner />
+        <AboutMe  />
+      </div>
       <Footer/>
     </div>
   )
