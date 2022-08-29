@@ -1,7 +1,8 @@
 import styles  from '../styles/topBanner.module.scss'
 import  Image from  'next/image'
+import Link from 'next/link';
 
-export function BannerSection({title,  buttonText}) {
+export function BannerSection({title,  buttonText, url}) {
 
   console.log(title)
     return (
@@ -17,11 +18,12 @@ export function BannerSection({title,  buttonText}) {
         <div className={styles.textSection}>
           <h1>{title}
           </h1>
-          <button  className='button-primary'>
-            About me
-          </button>
+          <Link href={url}>
+            <button  className='button-primary'>
+              {buttonText}
+            </button>
+          </Link>
         </div>  
-
       </div>
     );
   }

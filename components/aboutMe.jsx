@@ -1,6 +1,11 @@
+import React from 'react'
 import styles from  '../styles/aboutMe.module.scss'
+import Link from 'next/link'
 
-export function AboutMe({title}) {
+export function AboutMe({title, body, url}) {
+
+    console.log(url)
+
     return (
         <div className={styles.aboutMe}>
             <div className={styles.profileImage}>
@@ -11,17 +16,10 @@ export function AboutMe({title}) {
             </div>
         <div className={styles.aboutMeText}>
             <h2 className="">{title}</h2>
-            <p  className="body-1">
-            I’m a junior front-end developer looking for a new role in an exciting
-            company. I focus on writing accessible HTML, using modern CSS
-            practices and writing clean JavaScript. When writing JavaScript code,
-            I mostly use React, but I can adapt to whatever tools are required.
-            I’m based in London, UK, but I’m happy working remotely and have
-            experience in remote teams. When I’m not coding, you’ll find me
-            outdoors. I love being out in nature whether that’s going for a walk,
-            run or cycling. I’d love you to check out my work.
+            <p className="body-1">
+                {body}
             </p>
-            <button className='button-secondary'>Go to Portfolio</button>
+            <Link href={url}><button className='button-secondary'>Go to Portfolio</button></Link>
         </div>
         </div>
     )

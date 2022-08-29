@@ -77,7 +77,8 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: none;
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -104,6 +105,7 @@ button {
   font-family: var(--ff-body);
   font-size: var(--fs-small);
   text-transform: uppercase;
+  text-decoration: none;
 
 }
 
@@ -149,6 +151,8 @@ button:hover {
     background-color: var(--clr-primary-grayish-blue);
     color: var(--clr-secondary-very-light-gray);
   }
+
+
 }
 
 

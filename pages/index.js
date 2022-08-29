@@ -6,7 +6,7 @@ import { BannerSection, AboutMe } from '../components'
 
 export default function Home({content}) {
 
-  const {about, banner} = content
+  const {banner, about} = content
   console.log(content)
   return (
     <div className={styles.container}>
