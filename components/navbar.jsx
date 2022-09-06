@@ -8,7 +8,7 @@ export function Navbar() {
     return (
         <nav className={styles.navbar}>
         <div className={styles.logo}>
-          <Image src="/logo.png" width={286} height={126} />
+          <Link href="/"><Image src="/logo.png" width={286} height={126} /></Link>
         </div>
         <div>
           <ul className={`${styles.links} body-2`}>

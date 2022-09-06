@@ -2,9 +2,9 @@ import React from 'react'
 import styles from  '../styles/aboutMe.module.scss'
 import Link from 'next/link'
 
-export function AboutMe({title, body, url}) {
+export function AboutMe({aboutMeTitle, aboutMeBody, profileImage }) {
 
-    console.log(url)
+    console.log(aboutMeTitle + aboutMeBody)
 
     return (
         <div className={styles.aboutMe}>
@@ -15,11 +15,11 @@ export function AboutMe({title, body, url}) {
                 />
             </div>
         <div className={styles.aboutMeText}>
-            <h2 className="">{title}</h2>
+            <h2 className="">{aboutMeTitle}</h2>
             <p className="body-1">
-                {body}
+                {aboutMeBody}
             </p>
-            <Link href={url}><button className='button-secondary'>Go to Portfolio</button></Link>
+            <Link href="/portfolio"><button className='button-secondary'>Go to Portfolio</button></Link>
         </div>
         </div>
     )

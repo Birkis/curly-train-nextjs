@@ -2,19 +2,12 @@ import React from 'react'
 import styles from  '../styles/portfolioItem.module.scss'
 import Link from 'next/link'
 
-export function PortfolioItem({ title, description, url, index}) {
+export function PortfolioItem({pagenum,  item} ) {
 
-    const slugify = (str) => {
-        return str
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/[\s_-]+/g, '-')
-            .replace(/^-+|-+$/g, '');   
-    } 
+    const {description, id, ingress, projectDetails, slug, title } = item
 
     return (
-        <div className={`${styles.portfolioItem}  ${index % 2 === 0 ? styles.reverse :  ""}`}>
+        <div className={`${styles.portfolioItem}  ${pagenum ? styles.reverse :  ""}`}>
             <div className={styles.profileImage}>
                 <img
                     src="/homepage/desktop/image-homepage-profile.jpg"
@@ -24,9 +17,9 @@ export function PortfolioItem({ title, description, url, index}) {
         <div className={styles.portfolioItemText}>
             <h2 className="">{title} </h2>
             <p className="body-1">
-                {description} This is the Index {index}
+                {description} This is the Index
             </p>
-            <Link href={ "/portfolio/" + `${slugify(title)}`  }><button className='button-secondary'>View case</button></Link>
+            <Link href={ "/portfolio/" + slug.current  }><button className='button-secondary'>View case</button></Link>
         </div>
         </div>
     )

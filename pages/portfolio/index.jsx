@@ -1,32 +1,50 @@
 
 
 import { PortfolioItem } from "../../components";
+import { sanityClient } from "../../sanity";
 
-export default function Portfolio({content}) {
+export default function Portfolio({portfoliopages}) {
     
-    const {portfolioItems} = content
-    console.log(portfolioItems + "hello")
+  
+
 
     return (
-        portfolioItems.map((item, index) => {
+      portfoliopages.map((item, index) => {
+            
+            const pagenum = index % 2 === 0 ? true : false
+            // console.log(pagenum)
+
             return (
-                <PortfolioItem key={index} index={index} {...item}/>
+                <PortfolioItem key={item.id} pagenum={pagenum} item = {item}/>
+                
             )
         })
-        // <h1>hello</h1>
+
+
     )
 }
 
 
-export async function getStaticProps() {
-
-    const res = await fetch("https://my-json-server.typicode.com/Birkis/curly-train-nextjs/db")
-    const content = await res.json()
   
-    return {
-      props: {
-        content,
-      },
+
+export const getServerSideProps =  async () => {
+
+  const query = '*[ _type == "portfolioPage"]'
+  const portfoliopages = await sanityClient.fetch(query)
+
+  
+
+if(!portfoliopages.length) {
+  return {props: {
+    portfoliopages: ["hello", "byebye"]
+  }}
+} else {
+
+  return {
+    props: {
+      portfoliopages
     }
   }
-  
+}
+
+}
