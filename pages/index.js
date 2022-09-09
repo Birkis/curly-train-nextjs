@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { sanityClient } from '../sanity'
+import  sanityClient  from '../sanity'
 
 import { BannerSection, AboutMe } from '../components'
 
@@ -22,23 +22,18 @@ export default function Home(frontpage) {
 
 export const getServerSideProps = async pageContext => {
 
-  // const res = await fetch("http://localhost:3000/content/home.json")
-  // const content = await res.json()
-
   const query = '*[_type == "frontPage"]'
   const frontpage = await sanityClient.fetch (query)
-
-
 
   if (!frontpage) {
     return {
         notFound: true
     }
-} else {
-    return {
-        props: frontpage[0]
-    }
-}
+  } else {
+      return {
+          props: frontpage[0]
+      }
+  }
 
 
 

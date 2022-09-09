@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 export function AboutMe({aboutMeTitle, aboutMeBody, profileImage }) {
 
-    console.log(aboutMeTitle + aboutMeBody)
 
     return (
         <div className={styles.aboutMe}>

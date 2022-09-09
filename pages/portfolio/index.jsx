@@ -1,7 +1,7 @@
 
 
 import { PortfolioItem } from "../../components";
-import { sanityClient } from "../../sanity";
+import  sanityClient  from "../../sanity";
 
 export default function Portfolio({portfoliopages}) {
     

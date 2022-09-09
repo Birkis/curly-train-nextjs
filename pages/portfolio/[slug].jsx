@@ -1,10 +1,11 @@
-import react from "react"
+import React from "react"
+import { useState, useEffect } from "react"
 import Image from 'next/image'
 import styles from  '../../styles/portfolioPage.module.scss'
 import Link from 'next/link'
-
-import { sanityClient } from "../../sanity";
-
+import sanityClient  from "../../sanity";
+import urlFor from "../../imageUrlFor";
+import getRef from "../../getRef";
 
 export const getServerSideProps = async pageContext => {
     
@@ -18,6 +19,17 @@ export const getServerSideProps = async pageContext => {
 
     const query = `*[ _type == "portfolioPage"  && slug.current == "${pageSlug}"]`
     const portfoliopage = await sanityClient.fetch(query)
+    const pageData =  portfoliopage[0]
+
+   
+    const next = pageData.next._ref
+    const prev = pageData.last._ref
+
+    const refQuery = `*[ _type == 'portfolioPage' &&  _id=="${next}" || _id=="${prev}"  ]`
+    const references = await sanityClient.fetch(refQuery)
+    
+    
+    const refs =  references
 
     if (!portfoliopage) {
         return {
@@ -25,25 +37,23 @@ export const getServerSideProps = async pageContext => {
         }
     } else {
         return {
-            props: portfoliopage[0]
+            props: {pageData:pageData, refs: refs}
         }
     }
 
 }
 
+export default function PortfolioPage(data) {
 
 
-export default function PortfolioPage(portfoliopage) {
+    const {description, imageOne, imageThumb, imageTwo, ingress, projectDetails, slug, title} = data.pageData
 
-    console.log(portfoliopage)
-
-    const {description, imageOne, imageThumb, imageTwo, ingress, projectDetails, slug, title} = portfoliopage
 
     return (
         <div className="wrapper">
             <div className={styles.container}>
                 <div className={styles.bannerImage}>
-                    <Image src="/portfolio/desktop/image-portfolio-bookmark.jpg"
+                    <Image src={urlFor(imageOne).url()}
                             width={1100}
                             height={600}
                 
@@ -75,10 +85,10 @@ export default function PortfolioPage(portfoliopage) {
                         <h3>Static Previews</h3>
                         <div className={styles.twoColImageContainer}>
                             <div className={styles.twoColImage}>
-                                <Image src="/portfolio/desktop/image-portfolio-bookmark.jpg" width={635} height={400} alt="Some alt" ></Image>
+                                <Image src={urlFor(imageOne).url()} width={635} height={400} alt="Some alt" ></Image>
                             </div>
                             <div className={styles.twoColImage}>
-                                <Image src="/portfolio/desktop/image-portfolio-bookmark.jpg" width={635} height={400} alt="Some alt" ></Image>
+                                <Image src={urlFor(imageTwo).url()} width={635} height={400} alt="Some alt" ></Image>
                             </div>
                         </div>
                     </div>
@@ -91,7 +101,9 @@ export default function PortfolioPage(portfoliopage) {
                             <Image src="/icons/arrow-left.svg" width={10} height={10}></Image>
                         </div>
                         <div>
-                            <h2>Some Past Project</h2>
+                            <Link href={data.refs[0].slug.current}>
+                                <h2>{data.refs[0].title}</h2>
+                            </Link>
                             <p>Past project</p>
                         </div>
                     </div>
@@ -101,7 +113,9 @@ export default function PortfolioPage(portfoliopage) {
                             <Image src="/icons/arrow-right.svg" width={10} height={10}></Image>
                         </div>
                         <div>
-                            <h2>Some other project</h2>
+                            <Link  href={data.refs[1].slug.current}>
+                                <h2>{data.refs[1].title}</h2>
+                            </Link>
                             <p>Next project</p>
                         </div>
                     </div>
