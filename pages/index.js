@@ -1,33 +1,41 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import  sanityClient  from '../sanity'
 
 import { BannerSection, AboutMe } from '../components'
 
 
-export default function Home({content}) {
+export default function Home(frontpage) {
 
-  const {about, banner} = content
-  console.log(content)
+  const {phrase, aboutMeTitle, aboutMeBody, profileImage} = frontpage
+  console.log(frontpage)
   return (
     <div className={styles.container}>
       <div className="wrapper">
-        <BannerSection {...banner} />
-        <AboutMe {...about} />
+        <BannerSection phrase={phrase} />
+        <AboutMe aboutMeTitle={aboutMeTitle} aboutMeBody={aboutMeBody} profileImage={profileImage} />
       </div>
     </div>
   )
 }
 
 
-export async function getStaticProps() {
+export const getServerSideProps = async pageContext => {
 
-  const res = await fetch("http://localhost:3000/content/home.json")
-  const content = await res.json()
+  const query = '*[_type == "frontPage"]'
+  const frontpage = await sanityClient.fetch (query)
 
-  return {
-    props: {
-      content,
-    },
+  if (!frontpage) {
+    return {
+        notFound: true
+    }
+  } else {
+      return {
+          props: frontpage[0]
+      }
   }
+
+
+
 }
 

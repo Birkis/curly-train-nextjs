@@ -1,9 +1,10 @@
 import styles  from '../styles/topBanner.module.scss'
 import  Image from  'next/image'
+import Link from 'next/link';
 
-export function BannerSection({title,  buttonText}) {
+export function BannerSection({phrase}) {
 
-  console.log(title)
+  console.log(phrase)
     return (
       <div className={styles.bannerContainer}>
 
@@ -15,13 +16,14 @@ export function BannerSection({title,  buttonText}) {
             />
 
         <div className={styles.textSection}>
-          <h1>{title}
+          <h1>{phrase}
           </h1>
-          <button  className='button-primary'>
-            About me
-          </button>
+          <Link href="/about">
+            <button  className='button-primary'>
+              Read more
+            </button>
+          </Link>
         </div>  
-
       </div>
     );
   }
