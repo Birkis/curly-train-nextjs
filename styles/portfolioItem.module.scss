@@ -2,12 +2,16 @@
     margin: 150px auto;
     display: flex;
     max-width: 1110px;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     @media screen and (max-width: 860px) {
         margin: 20px auto;
     }
 
+}
+
+.firstPortfolioItem {
+    margin-top: 30px;
 }
 
 .reverse {
@@ -45,6 +49,8 @@
 
     .profileImage {
         width: 100%;
+        display: flex;
+        justify-content: center;
 
         img {
             aspect-ratio: 1/1;
