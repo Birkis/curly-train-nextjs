@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "geobook-1666c",
+  "private_key_id": "71b5aac8351b62ff191ee60de59416a259197120",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCpqyXq2PeA1ZXR\nqoSDQ7hEYI4ITvAWNHigeBoMskamOtut2/Hkuz74FwdxBxfw4FCTLZh5NVhjHGWJ\nzP4IQs4Q6abplChku1Q+wjqgNTuswM0CeVZ5RBzY3LSzGe60zU6nqoKCXQK8Z36X\n++jqmdlUi/WppOFIlvkjTDsZ0xJbtZ06LORPgNuTXcI90EzpyQtqWz7CInGTQZmz\n0AZrzHhfFVB7ZKrhr1iWEF9Zv5l/NGwfU5vNWKS7jUiITqPJfiGEeFBQDvr3CAVJ\nD04IkMxRBfzU7BIZOMoqIFRGN8UX8hpgXGf5Q5r7B9K1+RwoRLQbo6mSQaCqSfjD\nboF1rg1DAgMBAAECggEAJdHlJ1bKwNibRzuzwxDG09MUBe0WnlR+6QIsiFT645Xu\nHvCOmHZWoHV9rqeuof5WZ6A7wxTtiVYsmg1sOMovZdy3XIyuflm1ezHPYKPNFAJ8\nEEecy3Yv2fVEgEHREFNNa5lZ8xYphHarZNR9xEGcDLkP/wsmPoiMq14UNHr0tiVF\ndy+G54QtfPxukIt1GMma19rE/Rr3F41fsYHYK6CkSBPvUs5hYmPIovL3OWjtJL/f\np6wJiWd5y+MBpOxAo8TeWXLdQJZYsUiaJ6nAMpr2XTlfr9/4CJSOnI4ZVr4pocNJ\n2J2Mln11Po7fM7Lnn74FW/bJVh+db+RFwPPF9kPy9QKBgQDrYu/sUa1Bhc02/KC3\ne6aBsIvUljYdDrA1S70bsLfg1DPkCErnHi8KtgYNYl7N94dDEH7qHIH6COS+4GAR\nqO3GxvU/ZszeBtm59z7BgGkrXjVNMNPPdcPPnYhkb6FXQO8k37ov9kaRG/PXPtp0\njx/un4Q49xuPHYeiMxrs8vpzrwKBgQC4huY5Hm25xMVpwgE2bZaP+U5+OuO2r+6J\ndpVIr7pn872bMNayZIJYZO6e0fhrv849Gsmh/YGKTF+7yOV+BJqoEX4BwPODRr6U\nWuuHl7RfpFIhBqWyzx3UCcOZkfRlKrLzeKu7FQLX+uv2Kb2Omzn5RwW8T75cNf5x\nbJgwMYggrQKBgQDavEziGSBchB8oWuhquTAI0muOeKv+opiiXih0o+qrteYmoIIi\ndY0XcgD7zQ72bXA3pQubODScikkvC0ibAJU9I8PhUAFOzaTkSFr76/1PPLNhcN9T\nqUb2FpkZZBbVA1V3uaPGUCBRVl1pB1JwAFSXJYr0eMUWYEWbN8xspnqQpwKBgCrR\nKoSgeed8MC6dFLjzbtdTixIhSgtvAVOmT3eBRyit1xY2m+rjBZfLO89ge1tNM2bc\nW2MaNr/HfwNM12uJV/WdsXZotliExt4XxsU8v17d+yyspTA7fPlhlqCAzIvY/5Md\nMgQEGRfSooQJJXH8tNQR1dPfURWGddcN0raEF8k1AoGBALsv0TF54HOaSjPlxwiZ\ntZT9FJGeSusj/AqsGfEBlcbXNKU/2pmEqAluN8Y9eMNCVDr9o9XOhXfLD/Znwj1M\nu9xqrUR/sPpy7tVGxavwfTyJZi2XdnQ43YmpveyRubl4v5zz8nPtuOcYCvRg2Snm\n9WavsaaT1G3BFIW9ufjGjPSn\n-----END PRIVATE KEY-----\n",
+  "client_email": "geobook-1666c@appspot.gserviceaccount.com",
+  "client_id": "103605235947277819504",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/geobook-1666c%40appspot.gserviceaccount.com"
+}
