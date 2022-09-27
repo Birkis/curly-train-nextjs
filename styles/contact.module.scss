@@ -1,0 +1,121 @@
+
+#getInTouchWrapper {
+
+    margin-top: 50px;
+
+}
+
+.getInTouchContainer {
+
+    display: grid;
+    grid-template-columns: 5em 2fr 3fr 5em;
+    grid-template-rows: 4fr auto;
+
+    .topBorder {
+        grid-column: 2 / 4;
+        border-top: 1px solid var(--clr-secondary-light-gray);
+        height: 40px;
+    }
+
+    .title {
+        grid-column: 2  /  3;
+        }
+
+    p {
+        grid-column: 3 /  4;
+    }
+
+    .socialIcons {
+        grid-column: 3 / 4;
+        grid-row: 3;
+        display: flex;
+        align-items: center;
+        margin: 2.5rem 0;
+    }
+
+    .socialIcons  > img {
+        width:  25px;
+        height: 25px;
+        margin: 0 10px; 
+    }
+
+    .socialIcons img:nth-child(1) {
+        margin-left: 0px;
+    }
+}
+
+.contactMeWrapper {
+    display: grid;
+    grid-template-columns: 5em 2fr 3fr 5em;
+    grid-template-rows: auto;
+    margin-bottom: 80px;
+
+    .topBorder {
+        grid-column: 2 / 4;
+        border-top: 1px solid var(--clr-secondary-light-gray);
+        height: 40px;
+    }
+
+    .title {
+        grid-column: 2  /  3;
+        }
+
+
+    .formWrapper {
+       
+        .formInput:nth-child(1), .formInput:nth-child(3) {
+            margin: 0px;
+        }
+
+        .formInput {
+            display: flex;
+            flex-direction: column;
+            margin: 25px 0;
+
+            .formLabel {
+                margin: 3px 0;
+
+            }
+
+            .inputField {
+                background-color: var(--clr-secondary-light-gray);
+                border: none;
+                border-radius: 2px;
+                padding: 5px;
+            
+
+            }
+
+            .textArea {
+                width: 100%;
+                background-color: var(--clr-secondary-light-gray);
+                border: none;
+                border-radius: 2px;
+                resize: vertical;
+                padding: 5px;
+            }
+
+        }
+
+        .formButton {
+            margin-top: 30px;
+
+            a {
+                color: white;
+            }
+        }
+
+        input[type=submit] {
+            background-color: transparent;
+            border: none;
+            color: white;
+        }
+
+
+
+    }
+}
+
+
+
+

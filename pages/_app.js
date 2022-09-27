@@ -1,6 +1,5 @@
 import { Layout } from '../components'
 import '../styles/globals.scss'
-
  
 
 
