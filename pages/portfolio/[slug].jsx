@@ -1,11 +1,13 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import Image from 'next/image'
-import styles from  '../../styles/portfolioPage.module.scss'
 import Link from 'next/link'
 import sanityClient  from "../../sanity";
 import urlFor from "../../imageUrlFor";
 import getRef from "../../getRef";
+import styles from  '../../styles/portfolioPage.module.scss'
+import CTA from '../../components/CTA'
+
 
 export const getServerSideProps = async pageContext => {
     
@@ -119,10 +121,10 @@ export default function PortfolioPage(data) {
                             <p>Next project</p>
                         </div>
                     </div>
+                   
                 </section>
-
             </div>
-        
+            <CTA/> 
         </div>
     )
 
