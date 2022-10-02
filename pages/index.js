@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import  sanityClient  from '../sanity'
 
 import { BannerSection, AboutMe } from '../components'

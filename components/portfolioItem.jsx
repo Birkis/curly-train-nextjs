@@ -26,7 +26,7 @@ export function PortfolioItem({pagenum,  item, index} ) {
         <div className={styles.portfolioItemText}>
           <h2 className="">{title} </h2>
           <p className="body-1">
-            {description} This is the {index}
+            {description} 
           </p>
           <Link href={"/portfolio/" + slug.current}>
             <button className="button-secondary">View case</button>

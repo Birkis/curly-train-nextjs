@@ -105,7 +105,7 @@ button {
   font-size: var(--fs-small);
   text-transform: uppercase;
   text-decoration: none;
-
+  
 }
 
 button:hover {
@@ -145,6 +145,7 @@ button:hover {
   background-color: var(--clr-secondary-very-light-gray);
   color: var(--clr-primary-dark-blue);
   border: 1px solid var(--clr-primary-grayish-blue);
+  margin: 15px 0;
 
   &:hover {
     background-color: var(--clr-primary-grayish-blue);
