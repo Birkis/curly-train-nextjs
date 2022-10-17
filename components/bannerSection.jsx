@@ -26,6 +26,7 @@ export function BannerSection({phrase}) {
             height={600} 
             className={styles.image}
             id={"bannerImage"}
+            alt="Hero image for portfolio page"
             />
 
         <div className={styles.textSection}>
