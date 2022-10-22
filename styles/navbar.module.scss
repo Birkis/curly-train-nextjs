@@ -58,8 +58,6 @@
         transition: all 2s ease;
         opacity: 0;
         
-        
-        
         .links {
             display: flex;
             flex-direction: column;
@@ -76,10 +74,124 @@
     .primaryNavigationShowing {
         width: 100%;
         opacity: 1;
+    
     }
     
     .primaryNavigationHidden {
+        display: none;
+    }
 
+ 
+
+    #topLine, #bottomLine, #midLine {
+        background-color: rgb(41, 41, 41);
+        width: 26px;
+        height: 1px;
+        border-radius: 15px;
+        margin: 5px 0 5px 0;
+
+    }
+
+    .topLineAnimationClose {
+        transform-origin: 13px 0px;
+        animation: topLineRotateClose 0.3s ease-in-out forwards;
+
+
+    }
+
+    .midLineAnimationClose {
+        animation: midLineHide 0.2s ease-out forwards;
+
+    }
+
+
+    .bottomLineAnimationClose {
+        transform-origin: 13px 0px;
+        animation: bottomLineRotateClose 0.3s ease-in-out both;  
+
+    }
+
+    .topLineAnimationOpen {
+        transform-origin: 13px 0px;
+        animation: topLineRotateOpen 0.3s ease-in-out both;
+
+
+    }
+
+    .midLineAnimationOpen {
+        animation: midLineShow 0.2s both;
+        animation-timing-function: cubic-bezier(1,-0.22,1,.62);
+
+
+    }
+
+
+    .bottomLineAnimationOpen {
+        transform-origin: 13px 0px;
+        animation: bottomLineRotateOpen 0.3s ease-in-out forwards;  
+
+    }
+
+    @keyframes topLineRotateClose {
+        from{
+            rotate: 0deg;
+            translate: 0px 0px;
+        }
+        to{
+            rotate: 45deg;
+            translate: 0px 6px;
+        }
+    }
+
+    @keyframes midLineHide {
+        from{
+            opacity: 1;
+        }
+        to{
+            opacity: 0;
+        }
+    }
+
+    @keyframes bottomLineRotateClose {
+        from{
+            rotate: 0deg;
+            translate: 0px 0px;
+        }
+        to{
+            rotate: -45deg;
+            translate: 0px -6px;
+        }
+    }
+
+    @keyframes topLineRotateOpen {
+        from{
+            rotate: 45deg;
+            translate: 0px 6px;
+        }
+        to{
+            rotate: 0deg;
+            translate: 0px 0px;
+        }
+    }
+
+    @keyframes midLineShow {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+
+    @keyframes bottomLineRotateOpen {
+        from{
+            rotate: -45deg;
+            translate: 0px -6px;
+        }
+        to{
+            rotate: 0deg;
+            translate: 0px 0px;
+        }
     }
 
 }

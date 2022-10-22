@@ -1,0 +1,8 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Hamburger Button">
+<rect width="160" height="160" fill="white"/>
+<rect id="Bottom Line" x="25" y="103" width="110" height="15" rx="7.5" fill="#D9D9D9"/>
+<rect id="Mid Line" x="25" y="73" width="110" height="15" rx="7.5" fill="#D9D9D9"/>
+<rect id="Top Line" x="25" y="43" width="110" height="15" rx="7.5" fill="#D9D9D9"/>
+</g>
+</svg>

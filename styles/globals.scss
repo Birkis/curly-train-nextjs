@@ -161,7 +161,7 @@ button:hover {
 h1 {
   font-family: var(--ff-headings);
   font-weight: var(--fw-bold);
-  font-size: 3.125rem;
+  font-size: clamp(16px, 3.125rem, 48px);
   line-height: 3.125rem;
   color: var(--clr-primary-grayish-blue);
   letter-spacing: -0.45px;
