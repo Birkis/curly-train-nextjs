@@ -14,35 +14,31 @@ export function Navbar() {
     const router = useRouter()
     const pageRef = useRef(router.asPath)
 
+    const [menuSlideClose, setMenuSlideClose] = useState('')
+
     useEffect(() => {
 
+      //Listen for mousedown and handle event
       const handler = (e) => {
         //If the menu is not a part of the area clicked, then close the menu
         if(menuIsOpen && !navRef.current.contains(e.target)){
           
-          const someTarget = e.target
-          console.log(someTarget);
-          console.log(menuButton.current);
-
-          
+          const someTarget = e.target          
           if(!menuButton.current.contains(someTarget)){
             setMenuIsOpen(!menuIsOpen)
-            console.log("I also fire");
           }
-
-
         } 
       }
-      
       document.addEventListener("mousedown",handler)
 
+
+      //Check if path has changed. If new route, set menuIsOpen to false
       if(router.asPath !== pageRef.current){
         setMenuIsOpen(false)
 
       }
 
-      console.log("Is the menu open? " + menuIsOpen)
-
+      //reset event listener
       return ()=> {
         document.removeEventListener("mousedown", handler)
         pageRef.current = router.asPath
@@ -64,7 +60,6 @@ export function Navbar() {
             className={styles.mobileNavToggle}  
             onClick={()=> {
               setMenuIsOpen(!menuIsOpen)
-              console.log("I Fire!");
             }
           }>
             <HamburgerButton menuIsOpen={menuIsOpen}/>
@@ -74,7 +69,7 @@ export function Navbar() {
             ref={navRef}
             className={`
             ${styles.primaryNavigation} 
-            ${menuIsOpen ? styles.primaryNavigationShowing : styles.primaryNavigationHidden}`}>
+            ${menuIsOpen ? styles.primaryNavigationShowing : styles.primaryNavigationSlideClose}`}>
             <ul ref={linkButton} className={`${styles.links} body-2`} role='list'>
               <Link href="/"><li><a>Home </a></li></Link>
               <Link href="/portfolio"><li><a>Portfolio </a></li></Link>

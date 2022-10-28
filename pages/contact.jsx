@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from '../styles/contact.module.scss'
-import axios from 'axios';
 
 import { useForm } from 'react-hook-form';
  
@@ -8,14 +7,11 @@ import  supabase from '../config/supabaseClient'
 
 export default function Contact() {
 
-    const {register, handleSubmit, watch, formState: { errors }} = useForm();
+    const {register, handleSubmit, reset, watch, formState: { errors }} = useForm();
 
     const onSubmit = async (form) => {
   
-
-
       const {name, email, message} = form
-
 
       const {data, error} = await supabase
       .from('contactForm')
@@ -25,14 +21,14 @@ export default function Contact() {
       console.log("There was an error: " + JSON.stringify(error))
       } 
       if (data) {
-
         console.log(data)
+        reset()
       }
     }
     
-    const [name, setName] = useState('')
-    const [email, setEmail]  = useState('')
-    const [message, setMessage] = useState('')
+    // const [name, setName] = useState('')
+    // const [email, setEmail]  = useState('')
+    // const [message, setMessage] = useState('')
 
     return (
       <main>
@@ -94,7 +90,7 @@ export default function Contact() {
                 </div>
 
                 <button className={`button-primary ${styles.formButton}`}  >
-                       <input className='body-2' type="submit" name="" id="submitButtton"/>
+                       <input className='body-2' type="submit" name="" id="submitButtton" />
                 </button>
 
               </form>

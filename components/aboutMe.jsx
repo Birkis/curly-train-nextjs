@@ -15,9 +15,9 @@ export function AboutMe({aboutMeTitle, aboutMeBody, profileImage }) {
         const el = imgRef.current
         //About Me body text
         gsap.fromTo('.animation',
-            {y:80, opacity:0},
+            {y:10, opacity:0},
             {y:0,opacity:1, 
-            duration:2.5,
+            duration:0.5,
             scrollTrigger:{
                 trigger: ".animation-start",
                 start: "top 90%",
@@ -25,9 +25,9 @@ export function AboutMe({aboutMeTitle, aboutMeBody, profileImage }) {
         )
         // Go To Portfolio button
         gsap.fromTo('.button-secondary', 
-            {y:-20}, 
-            {y:0, 
-            duration:1.5,
+            {y:0}, 
+            {y:10, 
+            duration:0.5,
             scrollTrigger: {
                 trigger: '.animation',
                 start: 'top center'
@@ -35,9 +35,9 @@ export function AboutMe({aboutMeTitle, aboutMeBody, profileImage }) {
 
         //Profile Image  image    
         gsap.fromTo(el, 
-            {y: 80, opacity:0},
+            {y: 10, opacity:0},
             {y: 0, opacity:1, 
-                duration:1.5,
+                duration:0.5,
                 scrollTrigger: {
                     trigger: el,
                     start:  "top 100%"

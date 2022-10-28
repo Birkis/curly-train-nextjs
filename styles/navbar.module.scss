@@ -19,6 +19,7 @@
 .links  li {
     margin-left: 40px;
     text-transform: uppercase;
+
 }
 
 .mobileNavToggle {
@@ -27,6 +28,8 @@
 
 @media only screen and (max-width: 50em){
 
+    
+    
     .navWrapper {
         width: 60%;
         position: relative;
@@ -64,6 +67,11 @@
             background-color: var(--clr-primary-dark-blue);
             width: 100%;
             padding: 60px 0;
+
+            li {
+                padding: 15px 0;
+                font-size: 1.75rem;
+            }
             
             a {
                 color: white;
@@ -74,14 +82,20 @@
     .primaryNavigationShowing {
         width: 100%;
         opacity: 1;
+        animation: slideMenuOpen 1s ease-in forwards;
     
     }
     
     .primaryNavigationHidden {
         display: none;
+
     }
 
- 
+    .primaryNavigationSlideClose {
+        animation: slideMenuClose 1s ease-out forwards;
+        pointer-events: none;
+    }
+
 
     #topLine, #bottomLine, #midLine {
         background-color: rgb(41, 41, 41);
@@ -191,6 +205,25 @@
         to{
             rotate: 0deg;
             translate: 0px 0px;
+        }
+    }
+
+    @keyframes slideMenuOpen {
+        from{
+            clip-path: inset(0 0 0 0);
+        }
+        to{
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    @keyframes slideMenuClose {
+        from{
+            clip-path: inset(0 0 0 0);
+
+        }
+        to{
+            clip-path: inset(0 0 0 0);
         }
     }
 
